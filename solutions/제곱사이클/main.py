@@ -1,11 +1,11 @@
 def sqr_seq(arg: int):
-    src = [arg]
-    hasfound = False
+    src = [arg] # 제곱사이클 수열
+    hasfound = False # 제곱사이클 종료 조건
     while len(src) < 100:
         chkval = src[-1]
         nextval = sum(int(s) ** 2 for s in str(chkval))
         if nextval in src:
-            hasfound = True
+            hasfound = True # 순환을 찾은 경우
             break
         src.append(nextval)
     return hasfound, src
