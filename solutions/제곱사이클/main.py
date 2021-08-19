@@ -1,17 +1,18 @@
-def sqr_seq(alist:list):
-    if len(alist) >= 100:
-        return alist
-
-    chk = alist[-1]
-    nextval = sum(int(s)**2 for s in str(chk)) if len(str(chk)) > 1 else chk**2
-    if nextval in alist:
-        return alist
-
-    alist.append(nextval)
-    return sqr_seq(alist)
+def sqr_seq(arg: int):
+    src = [arg]
+    hasfound = False
+    while len(src) < 100:
+        chkval = src[-1]
+        nextval = sum(int(s) ** 2 for s in str(chkval))
+        if nextval in src:
+            hasfound = True
+            break
+        src.append(nextval)
+    return hasfound, src
 
 
 if __name__ == '__main__':
-    arg = 77
-    rst = sqr_seq([arg])
-    print(rst)
+    arg = 12
+    rst = sqr_seq(arg)
+    expr = str(len(rst[1])) if rst[0] == True else "100개 이상"
+    print(expr)
