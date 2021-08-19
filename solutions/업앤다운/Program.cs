@@ -23,9 +23,8 @@ namespace 업앤다운
         public void StartGame()
         {
             Console.WriteLine("컴퓨터가 1~100 중 랜덤 숫자 하나를 정합니다.\n이 숫자를 맞춰주세요.");
-            bool isCorrect = false;
             int numTry = 0;
-            while (!isCorrect)
+            while (true)
             {
                 Console.Write("1~100 숫자 입력: ");
                 string consoleInput = Console.ReadLine();
